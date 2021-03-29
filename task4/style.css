@@ -1,0 +1,15 @@
+html{
+    box-sizing: border-box;
+   
+    
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

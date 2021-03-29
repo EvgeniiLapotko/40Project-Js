@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="floor"></div>
+    <header class="header">
+        <div class="header__item">
+            Рандомный цвет из масива цветов
+        </div>
+        <div class="header__item">
+            <span class="hex">Hex</span>
+            <span class="simple active">Simple</span>
+            
+        </div>
+        <div class="header__item">
+            <div>
+                <span>Прозрачность</span>
+                <input class='opacityInput' type="range" min='1' max='9' value='8' change='0.1'>
+            </div>
+        </div>
+        
+    </header>
+    
+    <div class="wrap">
+        <h1 class="title__color">Цвет фона</h1>
+        <p class="color__name">white</p>
+        <button class='btn'>Сменить фон</button>
+    </div>
+
+    <script src='index.js'></script>
+</body>
+</html>

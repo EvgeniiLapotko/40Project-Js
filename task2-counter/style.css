@@ -1,0 +1,68 @@
+html{
+    box-sizing: border-box;
+   
+    
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title{
+    font-size: 50px;
+    color: #567
+}
+
+.value{
+    display: block;
+    margin-bottom: 30px;
+    font-size: 60px;
+}
+
+.btn{
+    all: unset;
+    padding: 5px 10px;
+    border: 2px solid #123;
+    border-radius: 10px;
+    margin-left: 10px;
+    transition: all 0.4s;
+}
+
+.increm{
+    border-color: green;
+    
+}
+
+.decrem{
+    border-color: red;
+}
+
+.increm:hover{
+    background-color: green;
+    color: #fff;
+}
+
+.decrem:hover{
+    background-color: red;
+    color: #fff;
+}
+
+.reset:hover{
+    background-color: #000;
+    color: #fff;
+}

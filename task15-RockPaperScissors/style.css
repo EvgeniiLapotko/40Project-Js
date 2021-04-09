@@ -1,0 +1,102 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header{
+    text-align: center;
+    background-color: #fff;
+    color: #123;
+    padding: 20px;
+}
+.title {
+    margin: 0;
+}
+
+.main{
+    height: 100vh;
+    background-color: #234;
+    padding: 40px 10px;
+}
+
+.table{
+    border: 3px solid #fff;
+    width: 250px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+
+}
+
+.table span{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.users{
+    position: absolute;
+    top: 50%;
+    font-size: 14px;
+    transform: translateY(-50%) translateX(-50%);
+    left: 0;
+    padding: 5px;
+    background-color: coral;
+    border-radius: 7px;
+}
+
+.result{
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+}
+
+.movies{
+    display: flex;
+    justify-content: center;
+}
+
+.move{
+    margin-right: 20px;
+    margin-left: 20px;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-right: 2px;
+    transition: all 0.5s;
+}
+
+.move:hover{
+    border: 4px solid red;
+}
+
+.make{
+    font-size: 26px;
+    color: #fff;
+    text-align: center;
+}
+
+.comp{
+    position: absolute;
+    font-size: 14px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) translateX(50%);
+    padding: 5px;
+    background-color: coral;
+    border-radius: 7px;
+}

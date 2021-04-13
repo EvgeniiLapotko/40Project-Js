@@ -14,9 +14,20 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.score{
+    position: absolute;
+    background-color: rgba(0,0,0, 0.3);
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+
 .game-container {
-    width: 400px;
-    height: 500px;
+    width: 500px;
+    height: 730px;
     background-color: skyblue;
     margin: 0 auto;
     position: relative;
@@ -26,25 +37,60 @@ body {
 
 .sky {
     background-color: skyblue;
+    background-image: url(fb-game-background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 400px;
+    height: 580px;
 }
 
 .ground {
     position: absolute;
     background-color: brown;
+    background-image: url(bottom-background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
-    top: 400px;
+    top: 580px;
     left: 0;
-    height: 100px;
+    height: 150px;
+    z-index: 1;
 }
 
 .bird {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 45px;
     position: absolute;
-    background-color: yellow;
+    background-image: url(flappy-bird.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.obs{
+    position: absolute;
+    width: 60px;
+    height: 300px;
+    background-image: url(flappybird-pipe.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.topObs{
+    background-image: url(flappybird-pipe.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    transform: rotate(180deg);
+    width: 60px;
+    height: 300px;
+    background-color: green;
 }

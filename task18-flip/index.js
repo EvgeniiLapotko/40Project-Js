@@ -1,44 +1,120 @@
 document.addEventListener("DOMContentLoaded", (e) => {
     const game = document.querySelector(".game-container");
-    const body = document.querySelector("body");
-    const sky = document.querySelector(".sky");
-    const ground = document.querySelector(".ground");
-    const bird = document.createElement("div");
-    let birdTop = 250;
-    let birdLeft = 80;
+    const score = document.querySelector(".score");
+    const bird = document.querySelector(".bird");
+    let birdTimer;
+    let birdLeft = 220;
+    let birdBottom = 100;
     let gravit = 2;
+    let isGameOver = false;
     let timer;
+    let num = 0
+    
 
     function createBird() {
-        bird.classList.add("bird");
-        bird.style.top = birdTop + "px";
+        birdBottom -= gravit;
+        bird.style.bottom = birdBottom + "px";
         bird.style.left = birdLeft + "px";
-        game.appendChild(bird);
     }
+
+    birdTimer = setInterval(createBird, 20)
+
+
+    function jump (e){
+        if (birdBottom < 490)birdBottom += 50;
+        bird.style.bottom = birdBottom + 'px'
+    }
+
+    let touchTimer;
+
+    function jumpTouch (e){
+        if (birdBottom < 490){
+            touchTimer = setInterval(()=>{
+                birdBottom += 7;
+                bird.style.bottom = birdBottom + 'px';
+            }, 20)
+            
+
+        }
+
+        
+    }
+
+    function controls(e){
+        if(e.keyCode === 32){
+            jump()
+        }
+    }
+
+    document.addEventListener('keyup', controls);
+    document.addEventListener('touchstart', jumpTouch);
+    document.addEventListener('touchend', e => {
+        clearInterval(touchTimer)
+    });
+
+
+    function createObs(){
+        let obsLeft = 500;
+        let randomHeigth = Math.random() * 150;
+        let obsBottom = randomHeigth
+        let topObsBottom = randomHeigth + 500;
+        let obs = document.createElement('div');
+        let topObs = document.createElement('div');
+        if(!isGameOver){
+            obs.classList.add('obs')
+            topObs.classList.add('topObs')
+        }
+        game.appendChild(obs);
+        game.appendChild(topObs);
+        obs.style.bottom = obsBottom + 'px';
+        obs.style.left = obsLeft + 'px';
+        topObs.style.bottom = topObsBottom + 'px';
+        topObs.style.left = obsLeft + 'px';
+           
+        function moveObs(){
+           obsLeft -= 2;
+           obs.style.left = obsLeft +'px';
+           topObs.style.left = obsLeft +'px';
+           if(obsLeft === -60){
+               clearInterval(timerId);
+               game.removeChild(obs)
+               game.removeChild(topObs)
+           }
+           if( 
+               
+               obsLeft > 180 && obsLeft < 280 && (birdBottom + 150 < obsBottom + 300 || birdBottom + 150 > topObsBottom - 50)  ||
+               birdBottom === 0 ){
+               gameOver()
+               clearInterval(timerId)
+           }
+       }
+       let timerId = setInterval(moveObs, 20)
+       if(!isGameOver) setTimeout(createObs, 3000);
+         
+   }
+   
+   createObs()
+
+   
 
     function gameOver() {
+        clearInterval(birdTimer);
+        clearInterval(timer)
         console.log("игра окончена");
+        isGameOver = true;
+        document.removeEventListener('keyup', controls)
+        document.removeEventListener('touchstart', jump)
     }
 
-    function gravity() {
-        timer = setInterval(() => {
-            birdTop += gravit;
-            bird.style.top = birdTop + "px";
-            if (birdTop + 42 > 400) {
-                clearInterval(timer);
-                gameOver();
-            }
-        }, 30);
+    function getScore (){
+        num++;
+        score.textContent = `Score : ${num}`
     }
 
-    function startGame() {
-        createBird();
-        gravity();
-        body.addEventListener("click", (e) => {
-            birdTop -= 30;
-            bird.style.top = birdTop + "px";
-        });
-    }
 
-    startGame();
+    timer = setInterval(getScore, 1000)
+
+    
+
+    
 });

@@ -1,0 +1,83 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: orangered;
+}
+
+form {
+    width: 400px;
+    border: 2px solid grey;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+h3 {
+    margin: 0;
+    background-color: skyblue;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.form-ground {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-ground label {
+    flex-grow: 1;
+}
+
+.inset {
+    width: 40px;
+    margin-bottom: 20px;
+}
+
+#color {
+    border: none;
+    padding: 0;
+    outline: none;
+    width: 70px;
+    height: 60px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.result {
+    width: 80px;
+    height: 80px;
+    background-color: orange;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.box {
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    resize: none;
+}

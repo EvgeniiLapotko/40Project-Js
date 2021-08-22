@@ -21,7 +21,7 @@ const timer = document.querySelector(".timer");
 const giveaway = document.querySelector(".giveaway");
 const items = document.querySelectorAll(".cart p");
 
-let futureDay = new Date(2021, 4, 24, 11, 30, 00);
+let futureDay = new Date(2022, 4, 24, 11, 30, 00);
 
 const year = futureDay.getFullYear();
 const hour = futureDay.getHours();
